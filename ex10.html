@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습10</title>
+</head>
+<body>
+    <button id="btn1">출력하기</button>
+    <div id="msg"></div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var msg = document.getElementById("msg");
+        btn1.addEventListener("click",function(){
+            msg.innerHTML = "<h1>문서의 특정 요소에 출력하기</h1>";
+            // document.write("<h1>문서에 출력하기</h1>");
+            console.log("콘솔창에 출력하기");
+            // alert("알림창으로 출력");
+            confirm("확인창으로 출력");
+            // prompt("확인창으로 출력");
+        });
+    </script>
+</body>
+</html>
