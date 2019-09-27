@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습14</title>
+</head>
+<body>
+    <script>
+        var kor=100, eng=80, mat=50, pass="탈락", hak;
+        //조건문 : if , switch
+        var tot = kor+eng+mat;
+        var avh = tot/3;
+        if(avg>=70) pass="합격"; //단순if
+        //if(조건){ 참실행; } else {거짓실행} -> if~else~
+        if(kor>=70 && eng>=70 && mat>=70) {
+            document.write("합격<br>");  //조건이 만족 할 때 실행
+        } else{
+            document.write("과락<br>");  //조건이 만족하지 않을 경우 실행
+        }
+        //if~else if~else~ 다단계if
+        if(avg>=90){ hak="A";}
+        else if(avg>=80){ hak="B";}
+        else if(avg>=70){ hak="c";}
+        else { hak="f";}
+
+        var jang;
+        switch(hak) {
+            case "A":
+                jang="장학생";
+                break;
+            case "B":
+                jang="반장학생";
+                break;
+            case "c":
+                jang="없음";
+                break;
+            default:
+                jang="개털";
+        }
+        document.write("<br>학점 : "+hak+"이며, 장학생 유무 : "+jang);
+    </script>
+</body>
+</html>

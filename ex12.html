@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습12</title>
+</head>
+<body>
+    <script>
+        var n; //초기화하지 않은 변수의 값은 null
+        var k=200, t="kim";
+        // k=null;
+        if(!k){
+            document.write("<br>값이 없음<br>");
+        } else{
+            document.write("<br>값이 있음<br>데이터의 유형은 : "+typeof k);
+        }
+        document.write("<br>t의 값의 유형은 : "+typeof t);
+        var a=20, b=3, c;
+        c=a+b; //a에 기억된 20 과 b에 기억된 3을 더한 후 c기억장소에 저장하라
+        document.write("<br>a와 b의 합은 :" +c);
+        document.write("<br>a와 b의 차는 :"+(a-b));
+        document.write("<br>a*b는 :" +(a*b));
+        document.write("<br>a/b는 :" +parseInt(a/b));
+        document.write("<br>a를 b로 나눈 나머지1 :" +(a%b));
+        d=parseInt(a/b);
+        e=a-d*b; //20-6*3 => 2 : 나머지는 원래값-구한몫*피젯수
+        document.write("<br>a를 b로 나눈 나머지2 :" +e);
+        var g =(a<b) ? 20 : 10; //삼항 조건연산문
+        document.write("<br>g의 값은 :" +g);
+        var f=++z;  //전위 연산 f:21, z:21
+        var h=a++;  //후위 연산 h:20, a:21
+        a++;  //a=22 증감 연산자
+        ++z;  //z=22
+        a--;  //a=21
+        --z;  //z=21
+        a+=2; //a+2 -> a=23 대입연산자
+        z-=2; //z-2 -> z=19
+        a*=2; //a*2 -> a=46
+        a/=2; //a/2 => a=23
+
+        var 김민식="좋은사람", 임은미="예쁜제자", 임상미="좋은동료", 임정미="옛애인";
+
+        document.write("<br>전위 연산f :"+f+"<br>후위연산h : "+ h);
+        var str = "<ul class='1st'>";
+        str+="<li class='item1'>"+김민식+"</li>";
+        str+="<li class='item2'>"+임은미+"</li>";
+        str+="<li class='item3'>"+임상미+"</li>";
+        str+="<li class='item4'>"+임정미+"</li>";
+        str+="</ul>";
+        document.write(str);
+    </script>
+</body>
+</html>

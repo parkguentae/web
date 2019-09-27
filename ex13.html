@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습13</title>
+</head>
+<body>
+    <script>
+        var a=50, b=40, c=30, z="50", d, e, f, g, h, i, j, k, l, m;
+        d=(a>b);  // 비교 연산자 -> true 또는 false로 결과값이 정해짐
+        e=(a<b);
+        f=(a>=b);
+        g=(a<=b);
+        h=(a==z);  //값만 비교
+        i=(a===z);  //데이터 유형까지 비교
+        j=(a!=z);  //값이 같지않으면
+        k=(a!==z); //데이터 유형까지 같지 않으면
+        l=(a>=b) && (z>=b);  //and 두 가지 이상의 비교식 -> 논리연산자(두 조건 모두 만족하면 참)
+        m=(a>=b) || (z>=b);  //or 두 가지 이상의 비교식 -> 논리연산자 (하나라도 조건 만족하면 참)
+        n=(a & c); //2진수 연산
+        o=(a | c); //같을 경우
+        p=(a ^ c); //다를 경우
+
+        document.write("<br>a===z의 결과는 : " +k);
+    </script>
+</body>
+</html>
