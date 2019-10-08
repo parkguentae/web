@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹문서15</title>
+</head>
+<body>
+    <script>
+    var n=1, sum=0; //반복변수에 대한 1.초기값 부여
+    while(n<=10){//while(2.조건) { 조건이 만족하는 동안 실행문; 3.증감식; }
+        sum=sum+n;  //sum+=n;
+        n++;  //n=n+1;   n+=1;  ++n;
+    }
+    //while반복문은 조건(반복)변수에 대한 1.초기값 부여가 필요하고, 
+    //2. 비교할 조건과 3. 증감식이 필요하다.
+    //반복변수에 대한 초기값부터 비교할 조건이 만족하는 동안 반복변수에 대한 증가를 진행하면서 반복하게 하는 실행문
+    var m=10, ad=0;
+    while(m>=1){//처음값 10부터 1씩 감소시키면서 1이 될때까지 반복 수행
+        ad=ad+m;
+        m--;  //m=m-1;  m-=1;   --m;
+    }
+    document.write("<br>1부터 10까지의 합산 결과 : "+sum);
+    document.write("<br>10부터 1까지의 합산 결과 : "+ad);
+    var k=1, data=0;
+    while(k>=1){ //무한 반복문(무한루프)
+        data+=k;
+        k+=2;
+        if(k>=10) {  //if문을 사용하여 무한루프를 벗어나게 하려면 break
+            break;
+        } else {
+            console.log("데이터 : "+data);
+        }
+    }
+    var j=0; sum=0;
+    do { //do { } while(조건); - do를 먼저 실행하고, 조건을 비교하므로 최소 1번 이상의 실행횟수를 가질 수 있다.
+        j++;
+        alert("현재값 : "+j);
+    } while(j<0);
+    </script>
+</body>
+</html>

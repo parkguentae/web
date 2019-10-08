@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html{width:100%;}
+        h2{text-align: center; line-height: 3; padding-top: 50px;}
+        #calender {width:350px; margin: 30px auto; height: 302; overflow: hidden; position: relative; background: #fff;}
+        .tb{border:1px solid #333; background:#fff; border-collapse: collapse;}
+        .tb tr{ display: table-row; height:40px; background: #fff;}
+        .tb th, .tb td {display:table-cell; line-height: 49px; height:49px; text-align: center; border-bottom: 1px solid #333; font-size: 14px; color:#333; width:50px;}
+        .tb th{ background: #eee;}
+        .tb .item1{color:#f00; font-weight: bold;}
+        .tb .item7{color:#00f; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h2>10월</h2>
+    <div id="calender"></div>
+    <script>
+        var tb="", n=0, cnt=0;
+        tb+="<table class='tb'>";
+        tb+="<thead><tr>";
+        tb+="<th class='item1'>일</th>";
+        tb+="<th class='item2'>월</th>";
+        tb+="<th class='item3'>화</th>";
+        tb+="<th class='item4'>수</th>";
+        tb+="<th class='item5'>목</th>";
+        tb+="<th class='item6'>금</th>";
+        tb+="<th class='item7'>토</th>";
+        tb+="</tr></thead><tbody>";
+        for(var i=1;i<=5;i++){
+            tb+="<tr>";
+            for(var j=1;j<=7;j++){
+                cnt++;
+                if(cnt>=3 && cnt<=33){
+                    n++;
+                    tb+="<td class='item"+j+"'>"+n+"</td>";
+                } else {
+                    tb+="<td class='item"+j+"'></td>";
+                }
+            }
+            tb+="</tr>";
+        }
+        tb+="</tbody>";
+        tb+="</table>";
+        var calender=document.getElementById("calender");
+        calender.innerHTML=tb;
+    </script>
+</body>
+</html>

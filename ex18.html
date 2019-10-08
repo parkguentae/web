@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body, html{width:100%;}
+        h2{text-align: center; line-height: 3; padding-top:50px;}
+        #notice{width:800px; margin: 30px auto; height:170px; overflow: hidden; position: relative; background: #fff;}
+        .blank{display:block; width: 800px; height: 170px; background:#fff; position:absolute; display: none;}
+        .blank:last-child{display:block;}
+        .td{display:none; border:1px solid #333; position: absolute; top:0; left:0; background:#fff;}
+        .tb:target{display:block; display:table;}
+        .tb tr{display: table-row; height:40px; background: #fff;}
+        .tb th, .tb td{display:table-cell; line-height:39px; height:39px; border-bottom: 1px solid #333; font-size: 14px; color:#333;}
+        .td th{background: #333; color:#fff;}
+        .tb .item1{width:60px; text-align:center;}
+        .tb .item3{width:100px; text-align:center;}
+        .tb .item2{width:600px; padding-left:14px;}
+        .tb a {color:#333;}
+        ul{list-style:none;}
+        .pagenation {width:160px; margin:0 auto;}
+        .pagenation li {float:left; width:40px;}
+    </style>
+</head>
+<body>
+    <h2>공지사항</h2>
+    <div id="notice"></div>
+    <ul class="pagenation">
+        <li><a href="#tb1">1</a></li>
+        <li><a href="#tb2">2</a></li>
+        <li><a href="#tb3">3</a></li>
+        <li><a href="#tb4">4</a></li>
+    </ul>
+    <script>
+        var data = [["김다솔","19-09-22"],["김윤정","19-09-23"],["김기태","19-09-24"],["박수인","19-09-25"],["유지나","19-09-26"],["이한결","19-09-27"],["임경미","19-09-28"],["한보영","19-09-29"],["송인혜","19-09-30"],["이주민","19-10-01"]];
+        var tb=""; cnt=10;
+        for(var i=1;i<=4;i++){
+            tb+="<div class='blank'></div>"
+            tb+="<table class='tb' id='tb"+i+"'>";
+            tb+="<thead><tr>";
+            tb+="<th class='item1'>번호</th>";
+            tb+="<th class='item2'>제목</th>";
+            tb+="<th class='item3'>작성일</th>";
+            tb+="</tr></thead><tbody>";
+            for(var j=0;j<3;j++){
+                cnt--;
+                if(cnt<0){break; break;}
+                tb+="<tr>";
+                tb+="<td class='item1'>"+(cnt+1)+"</td>";
+                tb+="<td class='item2'><a href=''>"+data[cnt][0]+"</a></td>";
+                tb+="<td class='item3'>"+data[cnt][1]+"</td>";
+                tb+="</tr>";
+            }
+            tb+="</tbody></table>";
+        }
+        var notice = document.getElementById("notice");
+        notice.innerHTML = tb;
+    </script>
+</body>
+</html>
