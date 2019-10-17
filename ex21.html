@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="data">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+    <div id="sum"></div>
+    <div id="tar"></div>
+    <div id="obj"></div>
+    <script>
+        //사용자 정의 객체의 선언
+        var prod = {name:"김기태", kor:100, mat:100, eng:80,//name, kor, mat, eng는 속성
+            tot:function(){ //tot는 메서드
+                return this.kor+this.mat+this.eng;
+            },
+            prt:function(ab){ //매개변수가 있는 메서드
+                return this.name+"은"+ab+"대상자입니다.";
+            }
+        };
+        var item = document.getElementsByClassName("item");
+        item[0].innerText = "name :" + prod.name;
+        item[1].innerText = "kor :" + prod.kor;
+        item[2].innerText = "mat :" + prod.mat;
+        item[3].innerText = "eng :" + prod.eng;
+        var sum = document.getElementById("sum");
+        sum.innerText = "총점 : " +prod.tot();
+        var tar = document.getElementById("tar");
+        tar.innerText = prod.prt("돼지열병감염");
+        var obj = document.getElementById("obj");
+        var txt="";
+        txt+="<br>이름 값인 name이 존재하나요? "+('name' in prod); //in 키워드는 값의 존재유무
+        txt+="<br>역사점수인 his이 존재하나요? "+('his' in prod);
+        txt+="<br>총점 계산을 위한 tot 메서드가 존재하나요? "+('tot' in prod);
+        with(prod){
+            txt+="<br>수학점수인 mat의 값은? "+(mat); //with 키워드는 객체의 값
+            txt+="<br>영어점수인 eng의 값은? "+(eng);
+        }
+        obj.innerHTML = txt;
+    </script>
+</body>
+</html>

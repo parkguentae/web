@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<style type="text/css">
+.spotlight {   background-color: #ff0;}
+.redtext {   color: #f00;}
+.bluetext {   color: #00f;}
+.largetext {   font-size: 30pt;}
+.italictext {   font-style: italic;}
+.box {   border: 3px solid #f00;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script>
+  $(document).ready(function(){
+    //태그에 id 속성이 잇는 요소에 spotlight클래스를 추가
+    $("[id]").addClass("spotlight");
+    //태그에 id 속성이 simplatext1 인 요소에 redtext 클래스를 추가
+    $("[id=simpletext1]").addClass("redtext");
+    //태그에 id 속성이 complex로 시작하는 요소에 italictext 클래스를 추가
+    $("[id^=complex]").addClass("italictext");
+    //태그에 id 속성이 text1로 끝나는 요소에 largetext 클래스를 추가
+    $("[id$=text1]").addClass("largetext");
+    //태그에 id 속성이 text 단어가 있는 요소에 box 클래스를 추가
+    $("[id*=text]").addClass("box");
+  });
+</script>
+
+</head>
+<body>
+  <span id="simpletext1">simple</span>  <span class="simpletext2">jQuery</span>
+  <span id="complextext1">basic</span>  <span id="complextext2">example</span>
+  <span id="complex">book</span>
+</body>
+</html>

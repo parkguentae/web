@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹문서31</title>
+    <style>
+        #gnb a {color:#333;}
+        #gnb a:hover {color: gold;}
+        li{ -webkit-transition:0.5s; -o-transition:0.5s; -moz-transition:0.5s; -ms-transition:0.5s; transition: 0.5s;}
+        .on{float:left; border:1px solid #333;}
+        .off{clear:both; border:0;}
+    </style>
+</head>
+<body>
+    <nav id="gnb">
+        <ul class="menu">
+            <li class="item1"><a href=""></a></li>
+            <li class="item2"><a href=""></a></li>
+            <li class="item3"><a href=""></a></li>
+            <li class="item4"><a href=""></a></li>
+        </ul>
+    </nav>
+    <div id="cnt1"></div>
+    <script>
+        var gnb = document.getElementById("gnb");
+        var a = document.getElementsByTagName("a");
+        var menu = document.getElementsByClassName("menu");
+        var li = document.querySelectorAll(".menu li");
+        var txt = ["Intro", "Product", "Service", "Community"];
+        document.getElementById("cnt1").innerHTML = a.length+"개 요소";
+        menu[0].style.listStyle = "none";
+        for(var i=0;i<a.length;i++){
+            a[i].innerText = txt[i];
+            a[i].style.textDecoration = "none";
+            a[i].style.fontSize = "16px";
+            li[i].style.lineHeight = "2";
+        }
+        /*이벤트*/
+        cnt1.addEventListener("click", function(){
+            for(var i=0;i<li.length;i++){
+                li[i].style.padding = "16px";
+                li[i].style.margin = "16px";
+                li[i].style.transition = "0.5s"
+                li[i].classList.add = "on";
+                li[i].classList.remove = "off";
+                li[i].style.transform = "rotate(360deg)";
+            }
+        }); //DOM선택, DOM스타일, DOM이벤트,DOM조작
+        var url = ["http://www.naver.com", "http://www.google.com", "http://www.daum.net", "http://www.greenart.co.kr"];
+        var tit = ["네이버", "구글", "다음", "그린컴퓨터아트학원"];
+        for(var i=0;i<a.length;i++){
+            a[i].setAttribute("href", url[i]);
+            a[i].setAttribute("title", url[i]);
+            a[i].setAttribute("target", "_blank");
+            a[i].setAttribute("alt", a[i].getAttribute("title"));
+
+        }
+        var logo = document.createElement("div");
+        var node = document.createTextNode("로고");
+        var img = document.createElement("img");
+        logo.appendChild(img);
+        img.src = "https://placehold.it/140x50/333";  //"객체.속성 = 속성값" 으로 요소 속성지정
+        img.alt = "임시이미지";  //사용자 정의 속성 지정(x)
+        gnb.appendChild(logo);
+        logo.setAttribute("id","logo");  //객체.setAttribute("속성명," "속성값")으로 속성지정
+        logo.removeChild(node);
+    </script>
+</body>
+</html>

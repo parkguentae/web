@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html><html><head>
+<meta charset="UTF-8">
+<title>조건에 반대되는 엘리먼트 검색하기-:not()</title>
+<script src="jquery.js" type="text/javascript"></script>
+<style>
+  span { transition:0.8s; }
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script>
+   $(document).ready(function(){
+      //체크 박스가 체크되면, 그 다음 요소인 span 요소의 배경색을 빨강응로 하고, 체크가 해제되면 그 다음 요소인 span 요소의 배경색을 노랑으로 한다.(not)
+      $("input:checked + span").css("background","red");
+      $("input:not(:checked) + span").css("background","gold");
+      $("input").click(function(){
+         $("input:checked + span").css("background","red");
+      $("input:not(:checked) + span").css("background","gold");
+      });
+   });
+</script>
+</head>
+<body>
+   <div>
+      <input type="checkbox" name="fruit" /> <span>사과</span>
+   </div>
+   <div>
+      <input type="checkbox" name="fruit" /> <span>바나나</span>
+   </div>
+   <div>
+      <input type="checkbox" name="fruit" checked="checked" /> <span>오렌지</span>
+   </div>
+</body>
+</html>
+
+
+

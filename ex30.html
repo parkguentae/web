@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹문서30</title>
+</head>
+<body>
+    <h2>navigator 객체</h2>
+    <div id="brow"></div>
+    <div id="res"></div>
+    <script>zn
+        var txt1="<br>", txt2="<br>", os, pl;
+        for(var key in navigator){
+            txt2+="<br>"+key+" : "+navigator[key];
+        }
+        os=navigator.userAgent.toLowerCase();
+        if(os.indexOf('windows') >= 0) {
+            pl="window";
+        } else if(os.indexOf('macintosh') >=0){
+           pl="macintosh"; 
+        } else if(os.indexOf('iphone') >=0){
+           pl="iphone"; 
+        } else if(os.indexOf('ipad') >=0){
+           pl="ipad"; 
+        } else if(os.indexOf('android') >=0){
+           pl="android"; 
+        }
+        var ua = navigator.userAgent;
+        var device;
+        if(ua.match(/iPhone|iPad|Android/) != null || ua.match(/LG|SAMSUNG|Samsung/) != null){
+            device = "모바일";
+        } else {
+            device = "데스크탑";
+        }
+        txt1 = "현재기기는 "+device+", 브라우저의 운영체제는 "+pl+"dlau,"+navigator.platform+"입니다.";
+        var brow=document.getElementById("brow");
+        brow.innerHTML=txt1;
+        var res=document.getElementById("res");
+        res.innerHTML=txt2;
+    </script>
+</body>
+</html>

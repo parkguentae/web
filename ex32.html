@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹문서32</title>
+    <style>
+        .on{background: gold; color:#333; font-size:24px;}
+        .off{background: #fff; color:#18d; font-size:14px; font-weight: bold;}
+    </style>
+    <!--<script src="jquery-3.4.1.js"></script> 압축되지 않은 jquery 파일 다운로드하여 연결-->
+    <!--<script src="jquery-3.4.1.min.js"></script> 압축된 jquery 파일 다운로드하여 연결-->
+    <!-- CDN 방식-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-latest.js"></script>-->
+    <script>
+        function data1() {  //함수를 정의
+            $("#data1").css("transition", "0.5s");
+            $("#data1").addClass("on");
+        }
+        // window.load = data1();
+        $(document).ready(function(){ // 문서가 준비되면 함수를 호출하여 실행
+            data1();
+        });
+    </script>
+    <script>
+        $(document).ready(function(){ //문서가 준비되면 익명함수를 곧 바로 실행
+            $("#data2").css("transition", "0.5s");
+            $("#data2").addClass("on");
+        });
+    </script>
+</head>
+<body>
+    <div id="data1">여기1</div>
+    <div id="data2">여기2</div>
+    <div id="data3">여기3</div>
+    <div id="data4">여기4</div>
+    <script>  //해당하는 요소의 아래에 기재하면 ready과정이 필요없음. 이미 해당요소가 로딩되어 있음.
+        $("#data3").css("transition", "0.5s");
+        $("#data3").addClass("on");
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹연습29</title>
+</head>
+<body>
+    <h2>screen 객체</h2>
+    <div id="sc_info"></div>
+    <div id="res1"></div>
+    <h2>location 객체</h2>
+    <div id="bun_gr">
+        <button id="btn1">현재 창을 네이버로</button>
+        <button id="btn2">현재 창을 다음으로</button>
+        <button id="btn3">현재 창을 구글로</button>
+        <button id="btn4">새로고침</button>
+    </div>
+    <div id="res2"></div>
+    <h2>history 객체</h2>
+    <div class="bun_gr">
+        <button id="bt1">한 화면 뒤로</button>
+        <button id="bt2">두 화면 뒤로</button>
+        <button id="bt3">한 화면 앞으로</button>
+        <button id="bt4">한 화면 뒤로</button>
+    </div>
+    <div id="res3"></div>
+    <script>
+        var txt1="<br>", txt2="<br>", txt3="<br>", sc_data="<br>";
+        for(var key in screen){
+            txt1+="<br>"+key+" : "+screen[key];
+        }
+        for(var key in location){
+            txt2+="<br>"+key+" : "+location[key];
+        }
+        for(var key in history){
+            txt3+="<br>"+key+" : "+history[key];
+        }
+        var res1 = document.getElementById("res1");
+        var res2 = document.getElementById("res2");
+        var res3 = document.getElementById("res3");
+        res1.innerHTML = txt1;
+        res2.innerHTML = txt2;
+        res3.innerHTML = txt3;
+        sc_data+="화면의 폭 : "+screen.width+"px이며, 화면의 높이 : "+screen.height+"px";
+        document.getElementById("sc_info").innerHTML = sc_data;
+        document.getElementById("btn1").addEventListener("click", function(){
+            location.replace("http://www.naver.com");
+        });
+        document.getElementById("btn2").addEventListener("click", function(){
+            location.assign("http://www.daum.net");
+        });
+        document.getElementById("btn3").addEventListener("click", function(){
+            location.href("http://www.google.com");
+        });
+        document.getElementById("btn4").addEventListener("click", function(){
+            location.reload();
+        });
+
+        document.getElementById("bt1").addEventListener("click", function(){
+            history.back();
+        });
+        document.getElementById("bt2").addEventListener("click", function(){
+            history.go(-2);
+        });
+        document.getElementById("bt3").addEventListener("click", function(){
+            history.go(1);
+        });
+        document.getElementById("bt4").addEventListener("click", function(){
+            history.go(2);
+        });
+    </script>
+</body>
+</html>

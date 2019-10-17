@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹문서24</title>
+</head>
+<body>
+    <div id="obj1"></div>
+    <div id="date1"></div>
+    <script>
+        var tv = new object();
+        tv.color = 256;
+        tv.price = 400000;
+        var obj1 = document.getElementById("obj1");
+        obj1.innerHTML = "TV의 색가지수는 "+tv.color+"이며, 가격은"+tv.price+"입니다.<br>";
+
+        var arr = ["일","월","화","수","목","금","토"];
+        var today = new Date();
+        var year = today.getYear() +1900;//년
+        var mon = today.getMonth() +1;//월
+        var day = today.getDate();//일
+        var week = today.getDay();//요일번호 : 0~6
+        var wday = arr[week];
+        var date1 = document.getElementById("date1");
+        date1.innerHTML = "현재 날짜 : "+year+"년"+mon+"월"+day+"일("+wday+")";
+        var time1 = document.getElementById("time1");
+        var h=0, m=0, s=0;
+        function clock() {
+            var time = new Date();
+            h = time.getHours();//시
+            m = time.getMinutes();//분
+            s = time.getSeconds();//초
+            time.innerHTML = h+"시 "+m+"분 "+s+"초 ";
+        }
+        setInterval(function(){clock();}, 1000); //serInterval(처리할 낸용, 주기) - 지정한
+    </script>
+</body>
+</html>

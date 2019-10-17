@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">네이버를 새 창으로 열기</a>
+    <select name="sel" id="sel">
+        <option value="">선택안함</option>
+        <option value="http://www.naver.com">네이버</option>
+        <option value="http://www.google.com">구글</option>
+        <option value="http://www.daum.net">다음</option>
+
+    </select>
+    <div> <button id="close">창닫기</button></div> <div id="res"></div>
+    <script>
+        var txt="<br>";
+        for(var key in window) {
+            txt+="<br>"+key+" : "+window[key];
+        }
+        var res = document.getElementById("res");
+        res.innerHTML = txt;
+        var sel = document.getElementById("sel");
+        var child;
+        sel.addEventListener("change", function(){
+            if(this.value!=""){
+                child = window.open(this.value, "child,","width=400, height=300, left=100, top=50, scrollbars=no, location=no, status=no, toolbars=no");
+            }
+        });
+        var close = document.getElementById("close");
+        close.addEventListener("click",function(){
+            child.close();
+        });
+    </script>
+</body>
+</html>

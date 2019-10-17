@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>n번째 혹은 짝수 또는 홀수 자식 엘리먼트:nth-child(n), :nth-child(even), :nth-child(odd)</title>
+<style>
+div { float: left;  }
+span { color: blue; }
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script>
+   $(document).ready(function(){
+      //ul의 후손 중에서 li의 두 번째 자식 요소에 "<span> - 2nd!</span>"를 자식으로 추가
+      $("ul li:nth-of-type(2)").append("<span> - 2nd!</span>");
+      //ul의 후손 중에서 li의 짝수 번째 자식 요소의 배경색을 핑크로 설정
+      $("ul li:nth-of-type(even)").css("background","pink");
+      //ul의 후손 중에서 li의 홀수 번재 자식 요소의 배경색을 노랑으로 설정
+      $("ul li:nth-child(odd)").css("background","yellow");
+   });
+</script>
+
+</head>
+<body>
+   <div>
+      <ul>         <li>사과</li>         <li>바나나</li>         <li>복숭아</li>      </ul>
+   </div>
+   <div>      <ul>         <li>소나타</li>      </ul>   </div>
+   <div>
+      <ul>         <li>코끼리</li>         <li>뱀</li>         <li>토끼</li> 
+              <li>말</li>   </ul>
+   </div>
+</body>
+</html>
+
+
